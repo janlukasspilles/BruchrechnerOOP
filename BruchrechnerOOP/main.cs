@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BruchrechnerOOP
 {
-    class Program
+    class main
     {
         static void Main(string[] args)
         {

@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bruch.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Menü\GetLongerLength.cs" />
+    <Compile Include="Menü\run.cs" />
+    <Compile Include="Model\Bruch.cs" />
+    <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
