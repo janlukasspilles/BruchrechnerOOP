@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BruchrechnerOOP
 {
-    class main
+    partial class main
     {
         static void Main(string[] args)
         {
+            Run();
         }
     }
 }

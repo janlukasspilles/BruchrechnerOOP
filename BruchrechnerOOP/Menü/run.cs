@@ -1,15 +1,11 @@
 ﻿using System;
 
-namespace Bruchrechner
+namespace BruchrechnerOOP
 {
     partial class main
     {
         static void Run()
         {
-            Bruch bruchA;
-            Bruch bruchB;
-            Bruch ergebnis = new Bruch();
-
             int trennStrich1;
             int trennStrich2;
             int trennStrich3;
@@ -103,34 +99,44 @@ namespace Bruchrechner
                 }
                 else if (c.Key == ConsoleKey.Enter)
                 {
-                    bruchA = new Bruch { zaehler = Convert.ToInt32(rechnung[0]), nenner = Convert.ToInt32(rechnung[1]) };
-                    bruchB = new Bruch { zaehler = Convert.ToInt32(rechnung[3]), nenner = Convert.ToInt32(rechnung[4]) };
-                    if (BruchValid(bruchA) && BruchValid(bruchB))
+                    try
                     {
+                        Bruch bruchA = new Bruch(Convert.ToInt32(rechnung[0]), Convert.ToInt32(rechnung[1]));
+                        Bruch bruchB = new Bruch(Convert.ToInt32(rechnung[3]), Convert.ToInt32(rechnung[4]));
+                        Bruch ergebnis = new Bruch();
                         switch (rechnung[2])
                         {
                             case "+":
-                                Addition(ref bruchA, ref bruchB, ref ergebnis);
+                                ergebnis.Zuweisen(bruchA.Addition(bruchB));
                                 break;
                             case "-":
-                                Subtraktion(ref bruchA, ref bruchB, ref ergebnis);
+                                ergebnis.Zuweisen(bruchA.Subtraktion(bruchB));
                                 break;
                             case "x":
-                                Multiplikation(ref bruchA, ref bruchB, ref ergebnis);
+                                ergebnis.Zuweisen(bruchA.Multiplikation(bruchB));
                                 break;
                             case "/":
-                                Division(ref bruchA, ref bruchB, ref ergebnis);
+                                ergebnis.Zuweisen(bruchA.Division(bruchB));
                                 break;
                             default:
-                                break;
+                                throw new ArgumentException("Ungültige Rechenoperation. Unbekannter Operator!");
                         }
-                        Kuerzen(ref ergebnis);
-                        rechnung[5] = ergebnis.zaehler.ToString();
-                        rechnung[6] = ergebnis.nenner.ToString();
+                        ergebnis.Kuerzen();
+                        rechnung[5] = ergebnis.Zaehler.ToString();
+                        rechnung[6] = ergebnis.Nenner.ToString();
                     }
-                    else
+                    catch (Exception e)
                     {
-                        //Ungültiger Bruch
+                        if (e is DivideByZeroException || e is ArgumentException)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine(e.Message);
+                        }
+                        else
+                        {
+                            throw e;
+                        }
+                        Console.ReadKey(true);
                     }
                 }
                 else
@@ -159,12 +165,6 @@ namespace Bruchrechner
                     }
                 }
             } while (menueAktiv);
-        }
-
-        struct Bruch
-        {
-            public int zaehler;
-            public int nenner;
         }
     }
 }

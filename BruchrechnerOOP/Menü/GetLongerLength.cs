@@ -6,7 +6,7 @@
 //              und gibt die Länge des längeren zurück.
 //Aenderungen:  08.07.2020 Erstellung
 
-namespace Bruchrechner
+namespace BruchrechnerOOP
 {
     partial class main
     {

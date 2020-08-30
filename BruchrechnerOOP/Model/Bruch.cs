@@ -14,8 +14,8 @@ namespace BruchrechnerOOP
         #endregion
 
         #region Properties
-        public int Zaehler { get; set; }
-        public int Nenner { get; set; }
+        public int Zaehler { get => _zaehler; set => _zaehler = value; }
+        public int Nenner { get => _nenner; set => _nenner = value; }
         #endregion
 
         #region Constructors
@@ -59,12 +59,12 @@ namespace BruchrechnerOOP
             Bruch ergebnis = new Bruch();
 
             int nennerKgv = BerechneKgv(this.Nenner, bruch.Nenner);
-
             ergebnis.Zaehler = this.Zaehler * nennerKgv / this.Nenner - bruch.Zaehler * nennerKgv / bruch.Nenner;
             ergebnis.Nenner = nennerKgv;
 
             return ergebnis;
         }
+
 
         public Bruch Multiplikation(Bruch bruch)
         {
@@ -78,12 +78,7 @@ namespace BruchrechnerOOP
 
         public Bruch Division(Bruch bruch)
         {
-            Bruch ergebnis = new Bruch();
-
-            ergebnis.Zaehler = this.Zaehler * bruch.Nenner;
-            ergebnis.Nenner = this.Nenner * bruch.Zaehler;
-
-            return ergebnis;
+            return new Bruch(this.Zaehler * bruch.Nenner, this.Nenner * bruch.Zaehler);
         }
 
         public void Zuweisen(Bruch bruch)
@@ -104,7 +99,7 @@ namespace BruchrechnerOOP
             return zahl2;
         }
 
-        private void Kuerzen()
+        public void Kuerzen()
         {
             if (Zaehler != 0)
             {
