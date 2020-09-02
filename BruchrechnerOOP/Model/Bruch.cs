@@ -36,6 +36,7 @@ namespace BruchrechnerOOP
             {
                 this.Zaehler = zaehler;
                 this.Nenner = nenner;
+                Kuerzen();
             }
         }
 
@@ -99,7 +100,7 @@ namespace BruchrechnerOOP
             return zahl2;
         }
 
-        public void Kuerzen()
+        private void Kuerzen()
         {
             if (Zaehler != 0)
             {

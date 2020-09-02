@@ -121,13 +121,12 @@ namespace BruchrechnerOOP
                             default:
                                 throw new ArgumentException("Ungültige Rechenoperation. Unbekannter Operator!");
                         }
-                        ergebnis.Kuerzen();
                         rechnung[5] = ergebnis.Zaehler.ToString();
                         rechnung[6] = ergebnis.Nenner.ToString();
                     }
                     catch (Exception e)
                     {
-                        if (e is DivideByZeroException || e is ArgumentException)
+                        if (e is DivideByZeroException || e is ArgumentException || e is FormatException|| e is OverflowException)
                         {
                             Console.WriteLine();
                             Console.WriteLine(e.Message);
