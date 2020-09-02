@@ -45,36 +45,18 @@ namespace BruchrechnerOOP
         #region Methods
         public Bruch Addition(Bruch bruch)
         {
-            Bruch ergebnis = new Bruch();
-
-            int nennerKgv = BerechneKgv(this.Nenner, bruch.Nenner);
-
-            ergebnis.Zaehler = this.Zaehler * nennerKgv / this.Nenner + bruch.Zaehler * nennerKgv / bruch.Nenner;
-            ergebnis.Nenner = nennerKgv;
-
-            return ergebnis;
+            return new Bruch(Zaehler * bruch.Nenner + Nenner * bruch.Zaehler, Nenner * bruch.Nenner);            
         }
 
         public Bruch Subtraktion(Bruch bruch)
         {
-            Bruch ergebnis = new Bruch();
-
-            int nennerKgv = BerechneKgv(this.Nenner, bruch.Nenner);
-            ergebnis.Zaehler = this.Zaehler * nennerKgv / this.Nenner - bruch.Zaehler * nennerKgv / bruch.Nenner;
-            ergebnis.Nenner = nennerKgv;
-
-            return ergebnis;
+            return new Bruch(Zaehler * bruch.Nenner - Nenner * bruch.Zaehler, Nenner * bruch.Nenner);            
         }
 
 
         public Bruch Multiplikation(Bruch bruch)
         {
-            Bruch ergebnis = new Bruch();
-
-            ergebnis.Zaehler = this.Zaehler * bruch.Zaehler;
-            ergebnis.Nenner = this.Nenner * bruch.Nenner;
-
-            return ergebnis;
+            return new Bruch(this.Zaehler * bruch.Zaehler, this.Nenner * bruch.Nenner);
         }
 
         public Bruch Division(Bruch bruch)

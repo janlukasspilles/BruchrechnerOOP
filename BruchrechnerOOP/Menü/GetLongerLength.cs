@@ -10,7 +10,7 @@ namespace BruchrechnerOOP
 {
     partial class main
     {
-        static int GetLongerLength(string a, string b, int defaultReturn)
+        private static int GetLongerLength(string a, string b, int defaultReturn)
         {
             int length = (a.Length > b.Length) ? a.Length : b.Length;
             return length <= 0 ? defaultReturn : length;

@@ -126,7 +126,7 @@ namespace BruchrechnerOOP
                     }
                     catch (Exception e)
                     {
-                        if (e is DivideByZeroException || e is ArgumentException || e is FormatException|| e is OverflowException)
+                        if (e is DivideByZeroException || e is ArgumentException || e is FormatException || e is OverflowException)
                         {
                             Console.WriteLine();
                             Console.WriteLine(e.Message);
