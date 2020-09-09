@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//Autor:        Jan-Lukas Spilles
+//Klasse:       IA119      
+//Datei:        main.cs
+//Datum:        29.08.2020
+//Beschreibung: main
 
 namespace BruchrechnerOOP
 {

@@ -48,6 +48,7 @@
     <Compile Include="Model\Bruch.cs" />
     <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
