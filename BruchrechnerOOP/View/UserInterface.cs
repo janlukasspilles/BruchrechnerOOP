@@ -41,7 +41,15 @@ namespace BruchrechnerOOP
         }
         #endregion
         #region Methods
+        public void ZeichneRechnung()
+        {
 
+        }
+
+        public void Berechne()
+        {
+
+        }        
         #endregion
     }
 }
