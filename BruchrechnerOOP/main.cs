@@ -10,9 +10,8 @@ namespace BruchrechnerOOP
     {
         static void Main(string[] args)
         {
-            UserInterface ui = new UserInterface();
-            ui.Bruch.Zuweisen(ui.BruchEinlesen());
-            ui.Bruch.Zuweisen(ui.Bruch.Addition(ui.BruchEinlesen()));
+            Controller controller = new Controller();
+            controller.Run();
         }
     }
 }
