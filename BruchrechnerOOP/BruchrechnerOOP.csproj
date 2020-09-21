@@ -44,8 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
-    <Compile Include="Menü\GetLongerLength.cs" />
-    <Compile Include="Menü\run.cs" />
     <Compile Include="Model\Bruch.cs" />
     <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
