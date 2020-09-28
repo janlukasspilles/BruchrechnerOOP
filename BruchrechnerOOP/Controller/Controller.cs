@@ -71,16 +71,16 @@ namespace BruchrechnerOOP
                     switch (UserInterface.Rechnung[2])
                     {
                         case "+":
-                            Ergebnis.Zuweisen(Bruch1.Addition(Bruch2));
+                            BruchAddieren();
                             break;
                         case "-":
-                            Ergebnis.Zuweisen(Bruch1.Subtraktion(Bruch2));
+                            BruchSubtrahieren();
                             break;
                         case "x":
-                            Ergebnis.Zuweisen(Bruch1.Multiplikation(Bruch2));
+                            BruchMultiplizieren();
                             break;
                         case "/":
-                            Ergebnis.Zuweisen(Bruch1.Division(Bruch2));
+                            BruchDividieren();
                             break;
                         default:
                             throw new ArgumentException("Ungültige Rechenoperation. Unbekannter Operator!");
@@ -141,6 +141,22 @@ namespace BruchrechnerOOP
             }
             Console.SetCursorPosition((Console.WindowWidth - 50) / 2, Console.WindowHeight - 2);
             Console.WriteLine("Drücken Sie eine beliebige Taste, um fortzufahren.");
+        }
+        private void BruchAddieren()
+        {
+            Ergebnis.Zuweisen(Bruch1.Addition(Bruch2));
+        }
+        private void BruchSubtrahieren()
+        {
+            Ergebnis.Zuweisen(Bruch1.Subtraktion(Bruch2));
+        }
+        private void BruchMultiplizieren()
+        {
+            Ergebnis.Zuweisen(Bruch1.Multiplikation(Bruch2));
+        }
+        private void BruchDividieren()
+        {
+            Ergebnis.Zuweisen(Bruch1.Division(Bruch2));
         }
         #endregion
     }
